@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>notepad</title>
+</head>
+<style type="text/css">
+ol,ul{
+display:block;
+list-style-type:none;
+margin:3px;
+}
+</style><body>
+<div>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&nbsp; &lt;meta charset="UTF-8" /&gt;<br>
+&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;<br>
+&nbsp; &lt;title&gt;Will You Be My Valentine, [Name]? &#10084;&#65039;&lt;/title&gt;<br>
+&nbsp; &lt;style&gt;<br>
+&nbsp;&nbsp;&nbsp; body {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100vh;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: linear-gradient(to bottom, #ff9a9e, #fecfef);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: Arial, Helvetica, sans-serif;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow: hidden;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #333;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #proposal {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: rgba(255, 255, 255, 0.95);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 40px 30px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 30px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 15px 40px rgba(0,0,0,0.25);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 90%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-height: 90vh;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow-y: auto;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; h1 {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #e91e63;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 2.8em;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0 0 20px;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; img {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 180px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 25px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 20px;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; .buttons {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 30px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; button {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 18px 60px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 1.9em;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 15px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 50px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cursor: pointer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: all 0.3s ease;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 5px 15px rgba(0,0,0,0.15);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #yesBtn {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #ff4081;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #yesBtn:hover {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: scale(1.15);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #f50057;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #noBtn {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #757575;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left: 50%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 50%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: translate(-50%, -50%);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: left 0.4s ease-out, top 0.4s ease-out;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #message {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 4em;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #e91e63;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 40px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animation: bounce 1s infinite;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; @keyframes bounce {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0%, 100% { transform: translateY(0); }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50% { transform: translateY(-20px); }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #extra {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 30px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 1.5em;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #555;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; &lt;/style&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp; &lt;div id="proposal"&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;!-- Change this GIF URL to something personal if you want (upload your own to GitHub later) --&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;img src="https://media.tenor.com/5w4ZJ1kZqAIAAAAC/cute-piggy.gif" alt="Cute piggy" /&gt;<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &lt;h1 id="question"&gt;Will you be my Valentine? &#10084;&#65039;&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &lt;div class="buttons"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button id="yesBtn"&gt;Yes! &#128525;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button id="noBtn"&gt;No &#128546;&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &lt;div id="message"&gt;YAYYY! &#129392;&#128149;&#128150;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;div id="extra"&gt;I knew you'd say yes! Let's make it the best day ever &#128536;&lt;/div&gt;<br>
+&nbsp; &lt;/div&gt;<br>
+<br>
+&nbsp; &lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp; const noBtn = document.getElementById('noBtn');<br>
+&nbsp;&nbsp;&nbsp; const yesBtn = document.getElementById('yesBtn');<br>
+&nbsp;&nbsp;&nbsp; const question = document.getElementById('question');<br>
+&nbsp;&nbsp;&nbsp; const message = document.getElementById('message');<br>
+&nbsp;&nbsp;&nbsp; const extra = document.getElementById('extra');<br>
+<br>
+&nbsp;&nbsp;&nbsp; // Dodge logic on mouse move<br>
+&nbsp;&nbsp;&nbsp; document.addEventListener('mousemove', (e) =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const rect = noBtn.getBoundingClientRect();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const btnX = rect.left + rect.width / 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const btnY = rect.top + rect.height / 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const dist = Math.hypot(e.clientX - btnX, e.clientY - btnY);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (dist &lt; 150) {&nbsp; // Sensitivity - lower = dodges from farther<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const angle = Math.atan2(e.clientY - btnY, e.clientX - btnX); // Reverse direction to run away<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const moveDist = 250 + Math.random() * 100;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let newX = btnX + Math.cos(angle) * moveDist;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let newY = btnY + Math.sin(angle) * moveDist;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Keep button on screen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newX = Math.max(100, Math.min(window.innerWidth - rect.width - 100, newX - rect.width / 2));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newY = Math.max(100, Math.min(window.innerHeight - rect.height - 100, newY - rect.height / 2));<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noBtn.style.left = `${newX}px`;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noBtn.style.top = `${newY}px`;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noBtn.style.transform = 'none'; // Override initial centering<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; });<br>
+<br>
+&nbsp;&nbsp;&nbsp; // Yes button click -&gt; show celebration<br>
+&nbsp;&nbsp;&nbsp; yesBtn.addEventListener('click', () =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; question.style.display = 'none';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.querySelector('.buttons').style.display = 'none';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message.style.display = 'block';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; extra.style.display = 'block';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Optional: Add confetti or sound later if you want to expand<br>
+&nbsp;&nbsp;&nbsp; });<br>
+&nbsp; &lt;/script&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</div>
+</body>
+</html>
