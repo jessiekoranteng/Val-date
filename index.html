@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Will You Be My Valentine, [Name]? ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #ff9a9e, #fecfef);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+      color: #333;
+    }
+    #proposal {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      max-width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    h1 {
+      color: #e91e63;
+      font-size: 2.8em;
+      margin: 0 0 20px;
+    }
+    img {
+      width: 180px;
+      margin-bottom: 25px;
+      border-radius: 20px;
+    }
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+    }
+    button {
+      padding: 18px 60px;
+      font-size: 1.9em;
+      margin: 15px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    #yesBtn {
+      background: #ff4081;
+      color: white;
+    }
+    #yesBtn:hover {
+      transform: scale(1.15);
+      background: #f50057;
+    }
+    #noBtn {
+      background: #757575;
+      color: white;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: left 0.4s ease-out, top 0.4s ease-out;
+    }
+    #message {
+      display: none;
+      font-size: 4em;
+      color: #e91e63;
+      margin-top: 40px;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    #extra {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="proposal">
+    <!-- Change this GIF URL to something personal if you want (upload your own to GitHub later) -->
+    <img src="https://media.tenor.com/5w4ZJ1kZqAIAAAAC/cute-piggy.gif" alt="Cute piggy" />
+    
+    <h1 id="question">Will you be my Valentine? ❤️</h1>
+    
+    <div class="buttons">
+      <button id="yesBtn">Yes! 😍</button>
+      <button id="noBtn">No 😢</button>
+    </div>
+    
+    <div id="message">YAYYY! 🥰💕💖</div>
+    <div id="extra">I knew you'd say yes! Let's make it the best day ever 😘</div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const question = document.getElementById('question');
+    const message = document.getElementById('message');
+    const extra = document.getElementById('extra');
+
+    // Dodge logic on mouse move
+    document.addEventListener('mousemove', (e) => {
+      const rect = noBtn.getBoundingClientRect();
+      const btnX = rect.left + rect.width / 2;
+      const btnY = rect.top + rect.height / 2;
+      const dist = Math.hypot(e.clientX - btnX, e.clientY - btnY);
+
+      if (dist < 150) {  // Sensitivity - lower = dodges from farther
+        const angle = Math.atan2(e.clientY - btnY, e.clientX - btnX); // Reverse direction to run away
+        const moveDist = 250 + Math.random() * 100;
+        let newX = btnX + Math.cos(angle) * moveDist;
+        let newY = btnY + Math.sin(angle) * moveDist;
+
+        // Keep button on screen
+        newX = Math.max(100, Math.min(window.innerWidth - rect.width - 100, newX - rect.width / 2));
+        newY = Math.max(100, Math.min(window.innerHeight - rect.height - 100, newY - rect.height / 2));
+
+        noBtn.style.left = `${newX}px`;
+        noBtn.style.top = `${newY}px`;
+        noBtn.style.transform = 'none'; // Override initial centering
+      }
+    });
+
+    // Yes button click -> show celebration
+    yesBtn.addEventListener('click', () => {
+      question.style.display = 'none';
+      document.querySelector('.buttons').style.display = 'none';
+      message.style.display = 'block';
+      extra.style.display = 'block';
+      // Optional: Add confetti or sound later if you want to expand
+    });
+  </script>
+</body>
+</html>
